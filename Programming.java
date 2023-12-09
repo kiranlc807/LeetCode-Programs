@@ -1,0 +1,50 @@
+package Programming;
+import java.util.Scanner;
+
+public class Programming {
+	
+	static int[] targetSub(int[] ar, int tr)
+	{
+		int[] rs = new int[2];
+		int j=0;
+		int k=1;
+		for(int i=0;i<ar.length-1;i++)
+		{
+			if(ar[i]+ar[i+1]==tr)
+			{
+				rs[j]=ar[i];
+				rs[k]=ar[i+1];
+			}
+			else if(ar[i]==tr)
+			{
+				rs[j]=ar[i];
+			}
+		}
+		return rs;
+	}
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the Array Size");
+		int n = sc.nextInt();
+		int[] ar = new int[n];
+		System.out.println("Enter the Array Elements");
+		for(int i=0;i<ar.length;i++)
+		{
+			ar[i]=sc.nextInt();
+		}
+		System.out.println("Enter the target elements");
+		int tr = sc.nextInt();
+		
+		int[] rs = targetSub(ar,tr);
+		
+		for(int i=0;i<rs.length;i++) {
+			if(rs[i]!=0)
+			{
+				System.out.print(rs[i]+",");
+			}
+		}
+
+	}
+
+}
